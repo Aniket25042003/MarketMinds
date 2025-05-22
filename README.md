@@ -64,7 +64,7 @@ npm run dev
 
 #### Backend
 ```bash
-cd backend
+cd shopsense_backend
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
