@@ -66,7 +66,7 @@ npm run dev
 ```bash
 cd shopsense_backend
 pip install -r requirements.txt
-uvicorn main:app --reload
+python3 -m uvicorn app.main:app --reload 
 ```
 
 ## Demo
