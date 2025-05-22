@@ -58,7 +58,6 @@ cd MarketMinds
 ### 2. Install Dependecies
 #### Frontend
 ```bash
-cd client
 npm install
 npm run dev
 ```
