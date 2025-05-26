@@ -6,14 +6,13 @@ from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, LLM
 
 load_dotenv()
-GOOGLE_KEY = os.getenv("GOOGLE_API_KEY")
+PERPLEXITY_KEY = os.getenv("PERPLEXITY_API_KEY")
 
-# Reuse your Gemini LLM for strategy tasks
 llm = LLM(
-    model="gemini/gemini-2.0-flash",
-    provider="google",
-    api_key=GOOGLE_KEY,
-    temperature=0.3,  # lower temperature for more consistent output
+    model="perplexity/sonar-reasoning",
+    base_url="https://api.perplexity.ai/",
+    api_key=PERPLEXITY_KEY,
+    temperature=0.7
 )
 
 def identify_opportunities(market_data, consumer_sentiment):
@@ -34,7 +33,7 @@ def identify_opportunities(market_data, consumer_sentiment):
         role="Market Strategist",
         goal="Identify clear market gaps and provide strategic recommendations.",
         backstory="A seasoned consultant turning data into actionable insights.",
-        tools=[],  # no external tools needed here
+        tools=[],  # no external tools needed
         llm=llm,
         verbose=False
     )

@@ -7,13 +7,13 @@ from crewai_tools import SerperDevTool, WebsiteSearchTool
 # Load credentials
 load_dotenv()
 SERPER_KEY = os.getenv("SERPER_API_KEY")
-GOOGLE_KEY = os.getenv("GOOGLE_API_KEY")
+PERPLEXITY_KEY = os.getenv("PERPLEXITY_API_KEY")
 
 # 1) Initialize Gemini LLM
 llm = LLM(
-    model="gemini/gemini-2.0-flash",
-    provider="google",
-    api_key=GOOGLE_KEY,
+    model="perplexity/sonar-deep-research",
+    base_url="https://api.perplexity.ai/",
+    api_key=PERPLEXITY_KEY,
     temperature=0.7
 )
 

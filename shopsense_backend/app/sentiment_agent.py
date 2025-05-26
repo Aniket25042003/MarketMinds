@@ -6,14 +6,13 @@ from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, LLM
 
 load_dotenv()
-GOOGLE_KEY = os.getenv("GOOGLE_API_KEY")
+PERPLEXITY_KEY = os.getenv("PERPLEXITY_API_KEY")
 
-# Reuse your Gemini LLM for sentiment analysis
 llm = LLM(
-    model="gemini/gemini-2.0-flash",
-    provider="google",
-    api_key=GOOGLE_KEY,
-    temperature=0.2  # low temp for consistent output
+    model="perplexity/sonar-reasoning-pro",
+    base_url="https://api.perplexity.ai/",
+    api_key=PERPLEXITY_KEY,
+    temperature=0.7
 )
 
 def analyze_sentiment(market_data):
